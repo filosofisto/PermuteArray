@@ -3,4 +3,4 @@ project(PermuteBySorting)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(PermuteBySorting main.cpp ArrayUtil.cpp ArrayUtil.h)
+add_executable(PermuteBySorting main.cpp ArrayUtil.h)
