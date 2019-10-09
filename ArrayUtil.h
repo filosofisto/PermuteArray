@@ -68,18 +68,8 @@ void ArrayUtil<T>::permuteInPlace(T array[], size_t length) const {
     mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
     uniform_int_distribution<int> uni(0, length-1); // guaranteed unbiased
 
-    map<int, int> noRepeatedValues;
-    int randomValue;
-
     for (size_t i = 0; i < length; i++) {
-        while (true) {
-            randomValue = uni(rng);
-            if (noRepeatedValues.find(randomValue) == noRepeatedValues.end()) {
-                noRepeatedValues.insert(pair<int, int>(randomValue, randomValue));
-                swap(array, i, randomValue);
-                break;
-            }
-        }
+        swap(array, i, uni(rng));
     }
 }
 
