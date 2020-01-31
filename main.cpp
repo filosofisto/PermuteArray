@@ -37,9 +37,8 @@ int main()
     cout << std::fixed << std::setprecision( 0 ) << "Diferenca Percentual: " << diff << "%" << endl;
 
     // Shuffle
-    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-
     start = high_resolution_clock::now();
+    unsigned seed = system_clock::now().time_since_epoch().count();
     shuffle(begin(array), end(array), default_random_engine(seed));
     stop = high_resolution_clock::now();
     auto duration3 = duration_cast<microseconds>(stop - start);
